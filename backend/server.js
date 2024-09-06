@@ -3,6 +3,7 @@ import authRoute from "./routes/auth.routes.js";
 import userRoute from "./routes/user.routes.js";
 import postRoute from "./routes/post.Routes.js";
 import notificationRoutes from "./routes/notification.route.js";
+import cors from 'cors'
 
 
 import {v2 as cloudinary} from "cloudinary";
@@ -25,6 +26,10 @@ const port =5000|| 3000 ;
 
 app.use(express.urlencoded({ extended: true })); // to parse form data(urlencoded)
 app.use(cookieParser());
+app.use(cors({
+	origin: "https://mellifluous-youtiao-4dab9d.netlify.app",
+
+}))
 
 app.use("/api/auth",authRoute);
 app.use("/api/users",userRoute);
