@@ -27,7 +27,7 @@ const OTPVerification = () => {
 
         if (enteredOtp.length === 6) {
             console.log("Entered OTP is:", enteredOtp);
-            const response = await fetch('/api/auth/otp-verify', {
+            const response = await fetch('https://wegram-clone.onrender.com//api/auth/otp-verify', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
